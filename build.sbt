@@ -20,6 +20,8 @@ lazy val root = (project in file("."))
       (fastOptJS in Compile).value
       (fullOptJS in Compile).value
       WebKeys.stage.value
-    }
+    },
+
+    useJGit
 
   )
