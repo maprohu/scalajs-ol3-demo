@@ -35,7 +35,7 @@ lazy val root = (project in file("."))
           (crossTarget in packageJSDependencies).value
         ))
 
-        genJS ++ (mappings in Assets in WebKeys.webModules).value
+        genJS ++ (mappings in Assets).value
       }
 
       if (!fullOpt.value) {
