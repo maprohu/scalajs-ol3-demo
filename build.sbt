@@ -2,6 +2,11 @@
 lazy val root = (project in file("."))
   .enablePlugins(ScalaJSPlugin, SbtWeb)
   .settings(
+    site.settings
+      ++
+    ghpages.settings
+  )
+  .settings(
     name := "oldemo",
     scalaVersion := "2.11.7",
     resolvers += Resolver.sonatypeRepo("snapshots"),
@@ -22,6 +27,8 @@ lazy val root = (project in file("."))
       WebKeys.stage.value
     },
 
-    useJGit
+    git.remoteRepo := "git@github.com:maprohu/scalajs-ol3-demo.git",
+    SiteKeys.siteSourceDirectory := WebKeys.stagingDirectory.value
+
 
   )
